@@ -9,7 +9,7 @@ COPY entrypoint.sh /usr/bin/entrypoint.sh
 
 RUN apt-get -q update \
 	&& DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-		openssh-server netcat telnet curl \
+		openssh-server netcat telnet curl python3 \
 	&& mkdir /var/run/sshd \
 	&& echo "AuthorizedKeysCommand /usr/bin/ssh-user-auth.sh" >> /etc/ssh/sshd_config \
   	&& echo "AuthorizedKeysCommandUser nobody" >> /etc/ssh/sshd_config \
